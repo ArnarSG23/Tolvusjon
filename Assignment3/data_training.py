@@ -5,18 +5,15 @@ import torch
 model = torch.hub.load('./yolov5', 'custom', path='/Users/arnarsveinngudmundsson/Documents/HR/MSc/Onn_2/Tölvusjón/Assignments/yolov5/best.pt', source='local')
 
 # Initialize webcam
-cap = cv2.VideoCapture(0)  # Use 0 for webcam, or provide video file path
+cap = cv2.VideoCapture(0)  
 
 while True:
     ret, frame = cap.read()
-    if not ret:
-        break
-
+    
     # Perform inference
     results = model(frame)
 
-    # Render results on the frame
-    annotated_frame = results.render()[0]  # Annotated frame
+    annotated_frame = results.render()[0] 
 
     # Display the frame
     cv2.imshow('YOLOv5 Live Detection', annotated_frame)
