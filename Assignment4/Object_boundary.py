@@ -29,7 +29,7 @@ def draw_extended_line(frame, rho, theta):
 
     #If we have two valid points, draw the line
     if len(valid_points) == 2:
-        cv2.line(frame, valid_points[0], valid_points[1], (0, 255, 0), 2)  # Green line
+        cv2.line(frame, valid_points[0], valid_points[1], (0, 255, 0), 2) 
 
 
 # 0 = phone camera
